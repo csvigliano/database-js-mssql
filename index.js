@@ -93,6 +93,7 @@ class MsSql {
     async close() {
         let pool = await this._pool();
         await pool.close();
+        await mssql.close();
         this._isConnected = false;
     }
 
